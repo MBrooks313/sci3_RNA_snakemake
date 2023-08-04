@@ -1,0 +1,33 @@
+{
+    "meta_file"             :   "<path/to/meta.csv>",
+    "fq_dir"                :   "<path/to/fastq/files>",
+    "fastq_R1_end"          :   "_R1_001.fastq.gz",
+    "fastq_R2_end"          :   "_R2_001.fastq.gz",
+
+
+
+    "job_all"               :   "--time=24:00:00 --mem=4G  --cpus-per-task=2 --gres=lscratch:100",
+
+
+    "trimmo"                :   "0.39",
+    "fastqc"                :   "0.11.9",
+    "kallisto"              :   "0.44.0",
+    "star"                  :   "2.5.4a",
+    "samtools"              :   "1.11",
+    "rseqc"                 :   "4.0.0",
+    "multiqc"               :   "1.9",
+    "trimmoadapt"           :   "<path/to/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa>",
+    "kallidx"               :   "<path/to/kallisto_index>",
+    "staridx"               :   "<path/to/star_index>",
+    "hkgidx"                :   "<path/to/HKG.bed>",
+    "rRNAidx"               :   "<path/to/rRNA.bed>",
+    
+    "job_trimmo"            :   "--time=02:00:00 --mem=16G  --cpus-per-task=12 --gres=lscratch:100",
+    "job_fastqc"            :   "--time=01:00:00 --mem=4G  --cpus-per-task=2 --gres=lscratch:100",
+    "job_kallisto"          :   "--time=08:00:00 --mem=12G  --cpus-per-task=2 --gres=lscratch:100",
+    "job_star"              :   "--time=24:00:00 --mem=72G  --cpus-per-task=12 --gres=lscratch:100",
+    "job_sort_index"        :   "--time=02:00:00 --mem=24G  --cpus-per-task=12 --gres=lscratch:100",
+    "job_genebody_cov"      :   "--time=02:00:00 --mem=4G  --cpus-per-task=2 --gres=lscratch:100",
+    "job_multiqc"           :   "--time=02:00:00 --mem=4G  --cpus-per-task=2 --gres=lscratch:100",
+    "job_count_rRNA"        :   "--time=01:00:00 --mem=4G  --cpus-per-task=2 --gres=lscratch:100"
+}
