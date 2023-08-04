@@ -3,11 +3,12 @@
     "fq_dir"                :   "<path/to/fastq/files>",
     "fastq_R1_end"          :   "_R1_001.fastq.gz",
     "fastq_R2_end"          :   "_R2_001.fastq.gz",
-
-
-
+    "umi_script"            :   "UMI_barcode_attach_gzipped_with_dic.py",
+    "lig_barcode"           :   "scripts/lig_384_bc.pickle2",
+    "oligo_barcode"         :   "scripts/RT_384_bc.pickle2",
+    "core"                  :   "1",
     "job_all"               :   "--time=24:00:00 --mem=4G  --cpus-per-task=2 --gres=lscratch:100",
-
+    "job_umi"               :   "--time=10:00:00 --mem=8G  --cpus-per-task=2 --gres=lscratch:100",
 
     "trimmo"                :   "0.39",
     "fastqc"                :   "0.11.9",
@@ -31,3 +32,8 @@
     "job_multiqc"           :   "--time=02:00:00 --mem=4G  --cpus-per-task=2 --gres=lscratch:100",
     "job_count_rRNA"        :   "--time=01:00:00 --mem=4G  --cpus-per-task=2 --gres=lscratch:100"
 }
+
+
+lig = config["lig_barcode"],
+            oligo = config["oligo_barcode"],
+            core = config["core"]
