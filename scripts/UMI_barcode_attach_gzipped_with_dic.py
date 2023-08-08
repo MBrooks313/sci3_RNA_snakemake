@@ -133,28 +133,27 @@ def attach_UMI_files(read1, read2, sampleID, output_folder, ligation_barcode_fil
     com_message = '''~~~~~~~~~~~~~~~UMI attachment done~~~~~~~~~~~~~~~~~~'''
     print(com_message)
     
+#if __name__ == "__main__":
+#    # updated version that we give the read1 and read2
+#    read1 = snakemake.input["r1"]
+#    read2 = snakemake.input["r2"]
+#    sampleID = snakemake.wildcards.sample
+#    output_folder = snakemake.output
+#    ligation_barcode_file = snakemake.params["lig"]
+#    RT_barcode_file = snakemake.params["oligo"]
+#    core = snakemake.params["core"]
+    
+#    attach_UMI_files(read1, read2, sampleID, output_folder,
+#        ligation_barcode_file, RT_barcode_file, core)
+
 if __name__ == "__main__":
-    # updated version that we give the read1 and read2
-    read1 = snakemake.input["r1"]
-    read2 = snakemake.input["r2"]
-    sampleID = snakemake.wildcards.sample
-    output_folder = snakemake.output
-    ligation_barcode_file = snakemake.params["lig"]
-    RT_barcode_file = snakemake.params["oligo"]
-    core = snakemake.params["core"]
+    read1 = sys.argv[1]
+    read2 = sys.argv[2]
+    sampleID = sys.argv[3]
+    output_folder = sys.argv[4]
+    ligation_barcode_file = sys.argv[5]
+    RT_barcode_file = sys.argv[6]
+    core=sys.argv[7]
     
     attach_UMI_files(read1, read2, sampleID, output_folder,
         ligation_barcode_file, RT_barcode_file, core)
-
-# if __name__ == "__main__":
-#     # updated version that we give the read1 and read2
-#     read1 = sys.argv[1]
-#     read2 = sys.argv[2]
-#     sampleID = sys.argv[3]
-#     output_folder = sys.argv[4]
-#     ligation_barcode_file = sys.argv[5]
-#     RT_barcode_file = sys.argv[6]
-#     core=sys.argv[7]
-    
-#     attach_UMI_files(read1, read2, sampleID, output_folder,
-#         ligation_barcode_file, RT_barcode_file, core)
